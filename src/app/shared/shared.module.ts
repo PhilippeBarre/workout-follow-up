@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppMaterialModule } from '@shared/app-material/app-material.module';
 
 const ImportExport = [
@@ -8,6 +8,7 @@ const ImportExport = [
   // TranslateModule,
   AppMaterialModule,
   FormsModule,
+  ReactiveFormsModule
   // AppToasterModule
 ];
 
