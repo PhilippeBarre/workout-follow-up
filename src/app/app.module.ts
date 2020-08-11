@@ -1,20 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreModule } from './core/core.module';
+import { CoreModule } from '@core/core.module';
+import { HeaderComponent } from '@components/header/header.component';
+import { SharedModule } from '@shared/shared.module';
+import { SigninComponent } from './components/auth/signin/signin.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { ProgramsComponent } from './components/programs/programs.component';
+import { ProgramComponent } from './components/programs/program/program.component';
+import { ProgramFormComponent } from './components/programs/program-form/program-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    SigninComponent,
+    SignupComponent,
+    ProgramsComponent,
+    ProgramComponent,
+    ProgramFormComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    CoreModule
+    CoreModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
