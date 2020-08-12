@@ -73,7 +73,6 @@ export class AuthService {
   }
 
   async signout() {
-    console.log('je passeS');
     await this.afAuth.auth.signOut();
     localStorage.removeItem('user');
     this.router.navigate(['auth/signin']);
