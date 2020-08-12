@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "workout-follow-up": {
+      "hosting": {
+        "workout-follow-up": [
+          "workout-follow-up"
+        ]
+      }
+    }
+  }
+}

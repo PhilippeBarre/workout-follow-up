@@ -10,10 +10,16 @@ import { ProgramsService } from '@core/services/programs.service';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 // http
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { environment } from 'environments/environment';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 
@@ -30,7 +36,10 @@ import { environment } from 'environments/environment';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule,
   ],
   providers: [
     {
@@ -41,7 +50,8 @@ import { environment } from 'environments/environment';
     },
     AuthService,
     AuthGuardService,
-    ProgramsService
+    ProgramsService,
+    AngularFireAuth
   ]
 })
 export class CoreModule {

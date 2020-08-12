@@ -8,8 +8,9 @@
   <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button mat-button routerLink="/auth/signup">{{ "header.signup" | translate }}</button>
-    <button mat-button routerLink="/auth/signin">{{ "header.signin" | translate }}</button>
+    <button *ngIf="!authService.isLoggedIn" mat-button routerLink="/auth/signup">{{ "header.signup" | translate }}</button>
+    <button *ngIf="!authService.isLoggedIn" mat-button routerLink="/auth/signin">{{ "header.signin" | translate }}</button>
+    <button *ngIf="authService.isLoggedIn" mat-button (click)="authService.signout()">{{ "header.signout" | translate }}</button>
   </div>
   <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
     <mat-icon>menu</mat-icon>
@@ -17,6 +18,7 @@
 
 </mat-toolbar>
 <mat-menu x-position="before" #menu="matMenu">
-  <button mat-menu-item routerLink="/auth/signup">{{ "header.signup" | translate }}</button>
-  <button mat-menu-item routerLink="/auth/signin">{{ "header.signin" | translate }}</button>
+  <button *ngIf="!authService.isLoggedIn" mat-menu-item routerLink="/auth/signup">{{ "header.signup" | translate }}</button>
+  <button *ngIf="!authService.isLoggedIn" mat-menu-item routerLink="/auth/signin">{{ "header.signin" | translate }}</button>
+  <button *ngIf="authService.isLoggedIn" mat-button (click)="authService.signout()">{{ "header.signout" | translate }}</button>
 </mat-menu>
