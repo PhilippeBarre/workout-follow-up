@@ -6,12 +6,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss', '../auth.scss']
 })
 export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
   errorMessage: string;
+  submitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,6 +32,10 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.signupForm.invalid) { return; }
+
+    this.submitted = true;
+
     const email = this.signupForm.get('email').value;
     const password = this.signupForm.get('password').value;
 
@@ -40,6 +45,7 @@ export class SignupComponent implements OnInit {
       },
       (error) => {
         this.errorMessage = error;
+        this.submitted = false;
       }
     );
   }

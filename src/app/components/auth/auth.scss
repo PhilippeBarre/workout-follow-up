@@ -1,0 +1,19 @@
+.auth-card {
+  width: calc(70% - 50px);
+  padding: 50px;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.error-message-firebase {
+  margin-top: 15px;
+}

@@ -1,0 +1,31 @@
+{
+  "global": {
+    "status": "Statut",
+    "create": "Créer",
+    "summary": "Résumé"
+  },
+  "header": {
+    "title": "Workout Follow-up",
+    "signin": "Se connecter",
+    "signup": "S'inscrire"
+  },
+  "signup": {
+    "title": "Je souhaite m'inscrire",
+    "signin": "J'ai déjà un compte !",
+    "submit": "Créer mon compte"
+  },
+  "signin": {
+    "title": "Je souhaite me connecter",
+    "signup": "Je n'ai pas encore de compte !",
+    "submit": "Me connecter"
+  },
+  "fields": {
+    "email": "Adresse mail",
+    "password": "Mot de passe"
+  },
+  "formControl": {
+    "required": "Ce champs est requis",
+    "email": "Cette adresse mail est incorrecte",
+    "passwordPattern": "Le mot de passe doit faire au moins 6 caractères"
+  }
+}

@@ -1,1 +1,27 @@
-<p>signin works!</p>
+<div class="auth-container">
+  <mat-card class="auth-card">
+    <mat-card-title>{{ "signin.title" | translate }}</mat-card-title>
+
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" autocomplete="off">
+      <mat-form-field  class="fullwidth form-group">
+        <mat-label>{{ "fields.email" | translate }}</mat-label>
+        <input matInput type="email" formControlName="email">
+        <mat-error *ngIf="signinForm.controls.email.errors?.required">{{ "formControl.required" | translate }}</mat-error>
+        <mat-error *ngIf="signinForm.controls.email.errors?.email">{{ "formControl.email" | translate }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="fullwidth form-group">
+        <mat-label>{{ "fields.password" | translate }}</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="signinForm.controls.password.errors?.required">{{ "formControl.required" | translate }}</mat-error>
+        <mat-error *ngIf="signinForm.controls.password.errors?.pattern">{{ "formControl.passwordPattern" | translate }}</mat-error>
+      </mat-form-field>
+
+      <div fxLayoutAlign="space-between">
+        <button mat-raised-button color="primary" type="submit" [disabled]="signinForm.invalid || submitted">{{ "signin.submit" | translate }}</button>
+        <button mat-stroked-button color="primary" routerLink="/auth/signup">{{ "signin.signup" | translate }}</button>
+      </div>
+    </form>
+    <mat-error class="error-message-firebase">{{ errorMessage }}</mat-error>
+  </mat-card>
+</div>

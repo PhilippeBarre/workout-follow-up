@@ -10,6 +10,7 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { ProgramsComponent } from './components/programs/programs.component';
 import { ProgramComponent } from './components/programs/program/program.component';
 import { ProgramFormComponent } from './components/programs/program-form/program-form.component';
+import { SignupModule } from '@components/auth/signup/signup.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProgramFormComponent } from './components/programs/program-form/program
     AppRoutingModule,
     CoreModule,
     SharedModule,
+    SignupModule
   ],
   providers: [],
   bootstrap: [AppComponent]

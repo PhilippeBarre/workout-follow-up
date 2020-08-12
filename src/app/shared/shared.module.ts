@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppMaterialModule } from '@shared/app-material/app-material.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 const ImportExport = [
   CommonModule,
-  // TranslateModule,
+  TranslateModule,
   AppMaterialModule,
   FormsModule,
   ReactiveFormsModule
